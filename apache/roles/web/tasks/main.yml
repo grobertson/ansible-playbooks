@@ -1,0 +1,13 @@
+---
+# This playbook contains common plays that will be run on all nodes.
+
+- name: Install apache 
+  apt: pkg=apache2 state=present
+  sudo: true
+  tags: apache2
+
+- name: Start the apache2 service
+  service: name=apache2 state=started enabled=true
+  sudo: true
+  tags: apache2
+  

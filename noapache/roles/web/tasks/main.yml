@@ -1,0 +1,15 @@
+---
+# This playbook contains common plays that will be run on all nodes.
+
+- name: Stop the apache2 service
+  service: name=apache2 state=stopped enabled=no
+  sudo: true
+  tags: apache2
+  
+- name: Remove apache2
+  apt: pkg=apache2 state=absent
+  sudo: true
+  tags: apache2
+
+
+  
